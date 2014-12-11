@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>redis.clients</groupId>
+  <artifactId>sharded-jedis-sentinel-pool</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  <name>sharded-jedis-sentinel-pool</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+      <jdk.version>1.7</jdk.version>
+      <jedis.version>2.6.0</jedis.version>
+      <spring.version>3.2.4.RELEASE</spring.version>
+      <log4j.version>1.2.16</log4j.version>
+      <slf4j.version>1.7.6</slf4j.version>
+      <reflectasm.version>1.09</reflectasm.version>
+      <jdom.version>2.0.2</jdom.version>
+      <beanUtils.version>1.9.2</beanUtils.version>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+    <build>
+        <finalName>redis-cache</finalName>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${jdk.version}</source>
+                        <target>${jdk.version}</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+  <dependencies>
+  	<dependency>
+      	<groupId>redis.clients</groupId>
+      	<artifactId>jedis</artifactId>
+      	<version>${jedis.version}</version>
+    </dependency>
+    <dependency>
+		<groupId>commons-pool</groupId>
+		<artifactId>commons-pool</artifactId>
+		<version>1.6</version>
+	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-pool2</artifactId>
+		<version>2.0</version>
+		<type>jar</type>
+		<scope>compile</scope>
+	</dependency>
+	<dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+      <!-- log4j -->
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>${log4j.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-log4j12</artifactId>
+          <version>${slf4j.version}</version>
+      </dependency>
+      <!-- log4j -->
+      <!-- reflectASM -->
+      <dependency>
+          <groupId>com.esotericsoftware.reflectasm</groupId>
+          <artifactId>reflectasm</artifactId>
+          <version>${reflectasm.version}</version>
+      </dependency>
+      <!-- reflectASM -->
+      <!-- jdom -->
+      <dependency>
+          <groupId>org.jdom</groupId>
+          <artifactId>jdom</artifactId>
+          <version>${jdom.version}</version>
+      </dependency>
+      <!-- jdom -->
+      <!-- bean utlis -->
+      <dependency>
+          <groupId>commons-beanutils</groupId>
+          <artifactId>commons-beanutils</artifactId>
+          <version>${beanUtils.version}</version>
+      </dependency>
+      <!-- bean utils -->
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+  </dependencies>
+</project>

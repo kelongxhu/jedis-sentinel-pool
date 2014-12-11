@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<clusters>
+	<cluster name="redis">
+		<masters>
+            <master>mymaster1</master>
+            <master>mymaster2</master>
+		</masters>
+		<sentinels>
+            <sentinel>127.0.0.1:26389</sentinel>
+            <sentinel>127.0.0.1:26399</sentinel>
+            <sentinel>127.0.0.1:26409</sentinel>
+		</sentinels>
+		<pool-config>
+			<maxTotal>100</maxTotal>
+			<maxIdle>50</maxIdle>
+			<minIdle>1</minIdle>
+			<testOnBorrow>true</testOnBorrow>
+			<testOnReturn>true</testOnReturn>
+			<testWhileIdle>true</testWhileIdle>
+			<numTestsPerEvictionRun>500</numTestsPerEvictionRun>
+			<timeBetweenEvictionRunsMillis>
+				60000
+			</timeBetweenEvictionRunsMillis>
+		</pool-config>
+	</cluster>
+</clusters>
